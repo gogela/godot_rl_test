@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://by5qey82gloig"]
+
+[ext_resource type="PackedScene" uid="uid://cernthfl5ofcc" path="res://main.tscn" id="1_dmmsv"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="2_4el8q"]
+
+[node name="multi" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 5)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.909662, 0.389137, -0.145215, 0.0152931, 0.380763, 0.924546, 0.415068, 0.838804, -0.352317, 0, 40, 0)
+current = true
+fov = 98.3
+near = 0.001
+far = 6000.0
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="main" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+
+[node name="main2" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="main3" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="main4" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
+
+[node name="main5" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+
+[node name="main6" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
+
+[node name="main7" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 25)
+
+[node name="main8" parent="Node3D" groups=["AGENTS"] instance=ExtResource("1_dmmsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 25)
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_4el8q")
+speed_up = 10
